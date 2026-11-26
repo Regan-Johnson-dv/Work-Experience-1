@@ -29,6 +29,10 @@ body {
   background: var(--cream);
 }
 
+.fa-bars{
+  display: none;
+}
+
 h1,
 h2,
 h3,
@@ -172,6 +176,12 @@ img {
   padding: 0;
 }
 
+.nav-links--column{
+  flex-direction: column;
+}
+
+
+
 .nav-links a {
   color: var(--ink);
   text-decoration: none;
@@ -180,6 +190,11 @@ img {
 .nav-links a:hover,
 .nav-links a[aria-current='page'] {
   color: var(--orange-dark);
+}
+
+.nav-links--column a{
+  flex-direction: column;
+  color: #fff;
 }
 
 .site-header--home {
@@ -201,7 +216,7 @@ img {
 }
 
 .site-header--home nav {
-  min-width: 0;
+    min-width: auto;
 }
 
 .site-header--home .nav-links {
@@ -495,6 +510,53 @@ img {
   max-width: 620px;
 }
 
+.menu{
+  background-color: #1f1a17;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  border: #000000 4px solid ;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 3;
+}
+
+.menu--open{
+  display: flex;
+}
+
+.fa-x{
+  position: fixed;
+  right:2%;
+  top:2%;
+  cursor: pointer;
+  color:#fff;
+}
+
+.menu h2{
+  font-size:38px;
+  line-height: 3;
+  color:#ffffff;
+}
+
+
+
+.menu .btn{
+  padding: 5px 80px;
+  color: #fafafa;
+}
+
+.menu .btn:hover{
+  color:#fff;
+}
+
+
+
 /* Page header (inner pages) */
 
 .page-header {
@@ -746,6 +808,55 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1200px){
+    .hero-inner{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+  }
+
+  .hero-media{
+    min-width: auto; 
+    width: 100%;
+}
+}
+
+@media (max-width: 992px){
+    .site-header--home .nav-links a{
+    font-size:12px;
+    padding:8px ;
+  }
+    .site-header--home .nav-links .btn{
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .hero-text h1{
+    font-size: 39px;
+  }
+
+  .hero-text .lead{
+    font-size: 16px;
+  }
+
+  .footer-grid{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-grid p{
+    font-size: 12px;
+  }
+
+  .footer-bottom p{
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -769,8 +880,26 @@ img {
     order: 0;
   }
 
+  .fa-bars{
+    display: block;
+    font-size: 20px;
+    color: #fff;
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+
+
+  .site-header--home .nav-links{
+    display:none;
+  }
+
+
+  .playbook-grid{
+    flex-direction: column;
+    display: flex;
   }
 
   .contact-layout {
@@ -780,6 +909,47 @@ img {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:625px){
+  .hero-text h1{
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .section-intro{
+    margin-bottom: 24px;
+  }
+
+  .section-intro h2{
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .trust-list{
+    font-size: 14px;
+  }
+
+  .feature-row h3{
+    font-size: 18px;
+    line-height: .5;
+  }
+
+  .feature-row p{
+    font-size: 16px;
+  }
+
+  .feature-row a{
+    font-size: 16px;
+  }
+
+  .hero-actions .btn, .cta-body .btn{
+    font-size: 12px;
+  }
+
+  .hero-text .lead{
+    font-size: 12px;
   }
 }
 
